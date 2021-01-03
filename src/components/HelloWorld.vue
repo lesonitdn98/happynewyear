@@ -62,7 +62,7 @@ export default {
       else this.animate_out(data)
     },
 
-    animate_in (layerfx, title, front, message) {
+    animate_in ({layerfx, title, front, message}) {
       gsap.to(layerfx, {
         background: 'rgba(0, 0, 0, 0.3)',
         ease: 'none',
@@ -90,7 +90,7 @@ export default {
       })
     },
 
-    animate_out (layerfx, title, front, message) {
+    animate_out ({layerfx, title, front, message}) {
       gsap.to(layerfx, {
         background: 'rgba(0, 0, 0, .1)',
         ease: 'none',
