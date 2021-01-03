@@ -1,13 +1,12 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-    devServer: {
-        compress: true,
-        public: 'leson.tech' // That solved it
-      },
+  devServer: {
+    compress: true,
+    disableHostCheck: true,
+  },
   module: {
     rules: [
-      // ... other rules
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -15,7 +14,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // make sure to include the plugin!
     new VueLoaderPlugin()
   ]
 }
