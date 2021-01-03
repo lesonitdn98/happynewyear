@@ -27,98 +27,99 @@
 
 <script>
 
-import 'particles.js/particles';
-const particlesJS = window.particlesJS;
-import gsap from "gsap";
+import 'particles.js/particles'
+import gsap from 'gsap'
+
+const particlesJS = window.particlesJS
 export default {
-  data() {
+  data () {
     return {
       cards: [
         {
           id: 1,
           title:
-            "https://assets.codepen.io/4291733/holiday-card-happy-new-year.svg",
-          front: "https://assets.codepen.io/4291733/holiday-card-front-2.svg",
-          back: "https://assets.codepen.io/4291733/holiday-card-back-2.svg",
-          quote: "This is the beginning of anything you want.",
-          author: "L.S."
+            'https://assets.codepen.io/4291733/holiday-card-happy-new-year.svg',
+          front: 'https://assets.codepen.io/4291733/holiday-card-front-2.svg',
+          back: 'https://assets.codepen.io/4291733/holiday-card-back-2.svg',
+          quote: 'This is the beginning of anything you want.',
+          author: 'L.S.'
         }
       ]
-    };
+    }
   },
 
   methods: {
-    handler(e, type) {
+    handler (e, type) {
       const data = {
-        layerfx: e.currentTarget.querySelector(".layer-fx"),
-        title: e.currentTarget.querySelector(".title"),
-        front: e.currentTarget.querySelector(".front"),
-        back: e.currentTarget.querySelector(".back"),
-        message: e.currentTarget.querySelector(".message")
-      };
+        layerfx: e.currentTarget.querySelector('.layer-fx'),
+        title: e.currentTarget.querySelector('.title'),
+        front: e.currentTarget.querySelector('.front'),
+        back: e.currentTarget.querySelector('.back'),
+        message: e.currentTarget.querySelector('.message')
+      }
 
-      if (type == "in") this.animate_in(data);
-      else this.animate_out(data);
+      if (type === 'in') this.animate_in(data)
+      else this.animate_out(data)
     },
 
-    animate_in({ layerfx, title, front, message }) {
+    animate_in (layerfx, title, front, message) {
       gsap.to(layerfx, {
-        background: "rgba(0, 0, 0, 0.3)",
-        ease: "none",
+        background: 'rgba(0, 0, 0, 0.3)',
+        ease: 'none',
         duration: 0.3
-      });
+      })
 
       gsap.to(title, {
         opacity: 0,
         scale: 0,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
 
       gsap.to(front, {
         y: -240,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
 
       gsap.to(message, {
         opacity: 1,
         y: -240,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
     },
 
-    animate_out({ layerfx, title, front, message }) {
+    animate_out (layerfx, title, front, message) {
       gsap.to(layerfx, {
-        background: "rgba(0, 0, 0, .1)",
-        ease: "none",
+        background: 'rgba(0, 0, 0, .1)',
+        ease: 'none',
         duration: 0.3
-      });
+      })
 
       gsap.to(title, {
         opacity: 1,
         scale: 1,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
 
       gsap.to(front, {
         y: 0,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
 
       gsap.to(message, {
         y: 0,
-        ease: "back.inOut",
+        ease: 'back.inOut',
         duration: 0.9
-      });
+      })
     }
   },
 
-  mounted() {
-    particlesJS("particles-js", {
+  mounted () {
+    particlesJS('particles-js', {
       particles: {
         number: {
           value: 380,
@@ -128,19 +129,19 @@ export default {
           }
         },
         color: {
-          value: "#ffffff"
+          value: '#ffffff'
         },
         shape: {
-          type: "circle",
+          type: 'circle',
           stroke: {
             width: 0,
-            color: "#000000"
+            color: '#000000'
           },
           polygon: {
             nb_sides: 5
           },
           image: {
-            src: "img/github.svg",
+            src: 'img/github.svg',
             width: 100,
             height: 100
           }
@@ -168,17 +169,17 @@ export default {
         line_linked: {
           enable: false,
           distance: 30,
-          color: "#ffffff",
+          color: '#ffffff',
           opacity: 0.1,
           width: 1
         },
         move: {
           enable: true,
           speed: 0.6,
-          direction: "none",
+          direction: 'none',
           random: false,
           straight: false,
-          out_mode: "out",
+          out_mode: 'out',
           bounce: false,
           attract: {
             enable: false,
@@ -188,15 +189,15 @@ export default {
         }
       },
       interactivity: {
-        detect_on: "canvas",
+        detect_on: 'canvas',
         events: {
           onhover: {
             enable: false,
-            mode: "repulse"
+            mode: 'repulse'
           },
           onclick: {
             enable: false,
-            mode: "push"
+            mode: 'push'
           },
           resize: true
         },
@@ -227,12 +228,12 @@ export default {
         }
       },
       retina_detect: true
-    });
+    })
   }
-};
+}
 </script>
 
-<style lang="css">
+<style lang='css'>
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
 
 * {
@@ -306,7 +307,7 @@ body {
   position: absolute;
   z-index: 3;
   bottom: -220px;
-  font-family: "Amatic SC";
+  font-family: 'Amatic SC';
   font-size: 36px;
   color: #4e94b8;
   padding: 0 12px;
